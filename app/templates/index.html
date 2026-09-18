@@ -5,42 +5,18 @@
 <meta name="description" content="市に言いたいことを、名古屋市会に出せる陳情書の形にします。所管の委員会と提出先、次の定例会までわかります。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#12202f;--teal:#0a9a8f;--line:#dfe7ec;--mut:#5d6b7a;--bg:#f5f8fa}
-*{box-sizing:border-box;min-width:0}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.75}
-.wrap{max-width:820px;margin:0 auto;padding:26px 16px 70px;overflow-wrap:anywhere}
-h1{font-size:clamp(21px,4.6vw,30px);margin:.2em 0 .1em;font-weight:900}
-.kick{color:var(--teal);font-weight:700;letter-spacing:.09em;font-size:12px;margin:0}
-.lead{color:var(--mut);margin:.5em 0 1.4em}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 2px 10px rgba(18,32,47,.05);margin:0 0 16px}
-label{display:block;font-weight:700;font-size:14px;margin:12px 0 4px}
-label small{font-weight:400;color:var(--mut)}
-input,textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px;font:inherit}
-textarea{min-height:110px;resize:vertical}
-button{font:inherit;font-weight:700;border:0;border-radius:999px;padding:12px 26px;background:var(--teal);color:#fff;cursor:pointer;margin-top:14px}
-button.g{background:#eef4f6;color:var(--ink);font-weight:400;padding:7px 14px;font-size:13px;margin:0}
-button:disabled{opacity:.5;cursor:default}
-.row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 0}
-h2{font-size:17px;margin:26px 0 .4em}
-.note{color:var(--mut);font-size:13px}
-.doc{white-space:pre-wrap;font-family:"Noto Sans JP",serif;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;line-height:2.1;font-size:15px}
-.kv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin:10px 0 0}
-@media(max-width:560px){.kv{grid-template-columns:1fr}}
-.kv div{background:#f2fbfa;border-radius:10px;padding:10px 12px}
-.kv b{display:block;font-size:19px}
-.kv span{font-size:12px;color:var(--mut)}
-.warn{border-left:3px solid #e0a020;background:#fffaf0;padding:10px 12px;border-radius:8px;font-size:14px;margin:12px 0 0}
-table{width:100%;border-collapse:collapse;font-size:14px}
-td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
-th{white-space:nowrap;width:34%}
-.err{color:#b4232a;font-size:14px}
-@media print{.noprint{display:none}body{background:#fff}.doc{border:0;padding:0}}
-</style>
+<link rel="stylesheet" href="style.css">
 <div class="wrap">
 <p class="kick">NAGOYA / CHINJO</p>
 <h1>困りごとを、市会に出せる形にする</h1>
 <p class="lead">名古屋市会への<b>陳情</b>は、<b>議員の紹介が要りません</b>。誰でも、1通の文書で出せます。ここでは、困りごとから陳情書の体裁を組み立て、どの委員会の担当かと提出先をお伝えします。</p>
+
+<div class="nav noprint">
+  <a href="./" aria-current="page">陳情書をつくる</a>
+  <a href="chinjo-seigan/">陳情と請願の違い</a>
+  <a href="kakikata/">陳情書の書き方</a>
+  <a href="nagoya/">名古屋市会への出し方</a>
+</div>
 
 <div class="card noprint">
   <label>困りごと <small>「〜してほしい」の形で、ひと言で</small></label>
@@ -87,6 +63,7 @@ th{white-space:nowrap;width:34%}
   <tr><th>委員会での扱い</th><td>委員会へ<b>送付</b>され、必要と認めたときに審査</td><td>本会議で議題とし、委員会に<b>付議</b>して審査</td></tr>
 </table>
 <p class="note">つまり陳情は、出しやすいかわりに扱いが軽く、結果も返ってきません。議員に紹介してもらえるなら請願のほうが確実です。</p>
+<p class="note"><a href="chinjo-seigan/">陳情と請願の違いをくわしく</a>／<a href="kakikata/">陳情書の書き方</a>／<a href="nagoya/">名古屋市会への出し方</a></p>
 
 <h2>この画面が推測していないこと</h2>
 <p class="note"><b>締切日は書きません。</b>市会は「各定例会等で付議・送付するための締切日を設けています」としていますが、その日付を公表していません。当サイトで推測すると、間に合わない日を示す恐れがあります。開会日だけをお伝えし、締切は事務局にお尋ねください。</p>

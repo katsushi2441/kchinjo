@@ -115,13 +115,29 @@ def _nagoya_page() -> str:
                 .replace("<!--SESSIONS-->", "".join(rows)))
 
 
+
+def _lastmod():
+    """サイトマップの lastmod。**このファイルの更新日**を使う。
+
+    ページの中身が変わるのはコードかデータが変わったときなので、毎回 now を入れない
+    （「いつも更新されている」ことになって、かえって無視される）。
+    2026-09-22 実測: Google が取りに来ていた子サイトマップは lastmod のあるものだけだった。
+    """
+    import datetime as _d
+    import os as _o
+    return _d.datetime.fromtimestamp(_o.path.getmtime(_o.path.abspath(__file__))).strftime("%Y-%m-%d")
+
+
+_LASTMOD = _lastmod()
+
+
 @app.get("/sitemap.xml")
 def sitemap():
     base = "https://kurage.exbridge.jp/kchinjo.php/"
     urls = [""] + [f"{s}/" for s in (*_STATIC_PAGES, "nagoya")]
     body = ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-            + "".join(f"<url><loc>{base}{u}</loc></url>" for u in urls)
+            + "".join(f"<url><loc>{base}{u}</loc><lastmod>{_LASTMOD}</lastmod><changefreq>monthly</changefreq></url>" for u in urls)
             + "</urlset>")
     return PlainTextResponse(body, media_type="application/xml")
 

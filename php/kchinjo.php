@@ -58,5 +58,7 @@ $body = substr($res, $hsize);
 if (stripos((string)$status . implode('', headers_list()), 'text/html') !== false || strpos($body, '<!doctype html') === 0) {
     $tag = '<script>(function(){var s=document.createElement("script");s.src="https://kurage.exbridge.jp/simpletrack.php?url="+encodeURIComponent(location.href)+"&ref="+encodeURIComponent(document.referrer);s.async=true;document.head.appendChild(s)})();</script>';
     $body = str_replace('</head>', $tag . '</head>', $body);
+    // 商品ページへの導線（デモ側だけに出す。アプリ本体は触らない）
+    $body = str_replace('</body>', '<p style="text-align:center;font-size:13px;margin:14px 0;color:#5d6b7a"><a href="https://kappstore.exbridge.jp/app.php?id=f09c91eaf0a60a2b&amp;ref=kchinjo" target="_blank" rel="noopener">この画面の一式をオンプレミスで導入する（商品ページ）</a></p></body>', $body);
 }
 echo $body;
